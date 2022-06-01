@@ -4,19 +4,19 @@ public class Television extends Electrodomestico{
 
     private Double resolucion;
     private Boolean sintonizador;
-    private final Double RESOLUCION = 20.0;
-    private final Boolean SINTONIZADOR = false;
+    private static final Double RESOLUCION_DEFAULT = 20.0;
+    private static final Boolean SINTONIZADOR__DEFAULT = false;
 
     public Television() {
         super();
-        this.resolucion = RESOLUCION;
-        this.sintonizador = SINTONIZADOR;
+        this.resolucion = RESOLUCION_DEFAULT;
+        this.sintonizador = SINTONIZADOR__DEFAULT;
     }
 
     public Television(Double precioBase, Double peso) {
         super(precioBase, peso);
-        this.resolucion = RESOLUCION;
-        this.sintonizador = SINTONIZADOR;
+        this.resolucion = RESOLUCION_DEFAULT;
+        this.sintonizador = SINTONIZADOR__DEFAULT;
     }
 
     public Television(Double precioBase, String color, Character consumoEnergetico, Double peso, Double resolucion, Boolean sintonizador) {

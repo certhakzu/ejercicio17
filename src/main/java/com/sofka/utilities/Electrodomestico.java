@@ -1,6 +1,5 @@
 package com.sofka.utilities;
 
-import java.util.Locale;
 
 public class Electrodomestico {
     protected Double precioBase;
@@ -8,22 +7,22 @@ public class Electrodomestico {
     protected Character consumoEnergetico;
     protected Double peso;
 
-    private final Integer PRECIO_BASE = 100;
-    private final String COLOR = "BLANCO";
-    private final Character CONSUMO_ENERGETICO = 'F';
-    private final Integer PESO = 5;
+    private static final Integer PRECIO_BASE = 100;
+    private static final String COLOR_DEFAULT = "BLANCO";
+    private static final Character CONSUMO_ENERGETICO = 'F';
+    private static final Integer PESO_DEFAULT = 5;
 
     public Electrodomestico() {
         precioBase = Double.valueOf(PRECIO_BASE);
-        color = COLOR;
+        color = COLOR_DEFAULT;
         consumoEnergetico = CONSUMO_ENERGETICO;
-        peso = Double.valueOf(PESO);
+        peso = Double.valueOf(PESO_DEFAULT);
     }
 
     public Electrodomestico(Double precioBase, Double peso) {
         this.precioBase = precioBase;
         this.peso = peso;
-        this.color = COLOR;
+        this.color = COLOR_DEFAULT;
         this.consumoEnergetico = CONSUMO_ENERGETICO;
     }
 
@@ -83,7 +82,7 @@ public class Electrodomestico {
 
     private void comprobarColor(String color){
         switch (color.toUpperCase()){
-            case "BLANCO":
+            case COLOR_DEFAULT:
             case "NEGRO":
             case "ROJO":
             case "AZUL":
@@ -91,7 +90,7 @@ public class Electrodomestico {
                 this.color = color.toUpperCase();
                 break;
             default:
-                this.color = COLOR;
+                this.color = COLOR_DEFAULT;
         }
     }
 
@@ -116,6 +115,8 @@ public class Electrodomestico {
             case 'F':
                 aumento = 10;
                 break;
+            default:
+                aumento = 0;
         }
 
         if (peso <= 19) {

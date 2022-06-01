@@ -3,16 +3,16 @@ package com.sofka.utilities;
 
 public class Lavadora extends Electrodomestico {
     private Double carga;
-    private final Integer CARGA = 5;
+    private static final Integer CARGA_DEFAULT = 5;
 
     public Lavadora() {
         super();
-        this.carga = Double.valueOf(CARGA);
+        this.carga = Double.valueOf(CARGA_DEFAULT);
     }
 
     public Lavadora(Double precioBase, Double peso) {
         super(precioBase, peso);
-        this.carga = Double.valueOf(Float.valueOf(CARGA));
+        this.carga = Double.valueOf(Float.valueOf(CARGA_DEFAULT));
     }
 
     public Lavadora(Double precioBase, String color, Character consumoEnergetico, Double peso, Double carga) {
